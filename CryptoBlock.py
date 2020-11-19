@@ -2,17 +2,19 @@ from hashlib import sha256
 
 
 class Block:
-    def __init__(self, index, transactions, timestamp):
+    def __init__(self, index, transactions, timestamp, previous_hash):
         """
         Constructor for the block class 
         :param index: Unique id for the block
         :param transaction: List of transactions
         :param timestamp: Time of generation of the block
+        :param previous_hash: Hash of the previous block in the chain
         """
 
         self.index = index
         self.tranactions = transactions
         self.timestamp = timestamp
+        self.previous_hash = previous_hash
 
     def compute_hash(block):
         """ 
